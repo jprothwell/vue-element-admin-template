@@ -39,13 +39,13 @@ router.beforeEach(async (to, from, next) => {
         try {
           store.dispatch('getInfo').then(roles => {
           // 根据roles  动态处理路由
-           console.log('执行了吗？')
             store.dispatch('handleRoutes', { roles: roles }).then(() => {
               router.addRoutes(store.getters.addRouters)
               // 重定向到有权限的第一个菜单栏路由
               const authRouters = store.getters.addRouters
               if (to.path === '/') {
                 const nextRoutePath = getRoutePath(authRouters)
+
                 next({ path: nextRoutePath, replace: true })
               } else {
                 next({ ...to, replace: true })

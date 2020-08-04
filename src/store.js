@@ -70,7 +70,7 @@ const store = new Vuex.Store({
             // const result = response.data.data
             // const { permissionCodeList, userVo } = result
             // commit('SET_USER', userVo)
-            const permissionCodeList = ['item-one']
+            const permissionCodeList = ['anyone'];// ['item-one']
             commit('SET_ROLES', permissionCodeList)
             resolve(permissionCodeList)
           // } else {

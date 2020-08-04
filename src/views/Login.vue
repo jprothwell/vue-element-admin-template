@@ -144,7 +144,8 @@ export default {
         //     const { data } = res.data
             Cookie.set('token', 'token')
             const pathQuery = `${this.redirect || '/'}${this.redirect && Object.keys(this.otherQuery).length > 0 ? '?' + qs.stringify(this.otherQuery) : ''}`
-            window.location.href = window.location.origin + `/vue-element-admin-template${pathQuery}`
+            // window.location.href = window.location.origin + `/vue-element-admin-template${pathQuery}`
+            this.$router.replace({ path: '/' })
         //   } else if (res.data && res.data.errCode === 10110002) {
         //     Cookie.remove('staffToken')
         //     this.$router.push({ path: '/login' })

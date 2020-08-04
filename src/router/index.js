@@ -21,8 +21,6 @@ export const fixedRoutes = [
 ]
 
 const createRouter = () => new Router({
-  mode: 'history',
-  base: '/vue-element-admin-template',
   scrollBehavior: () => ({ y: 0 }),
   routes: fixedRoutes
 })
